@@ -1,3 +1,4 @@
+7/11/2019
 
 This index.php file is a modification of the original index.php file that ships with ChatScript by Bruce Wilcox which you can obtain here:
 http://sourceforge.net/projects/chatscript/
@@ -32,3 +33,19 @@ function speak(text, callback) {
 
 Methods of wrtiting code to get a list of languages is discussed at the url:
 http://stephenwalther.com/archive/2015/01/05/using-html5-speech-recognition-and-text-to-speech
+
+7/13/2015
+
+Updated index.php as avatar1.php.
+
+Added a static avatar image.
+Modified formatting. Removed table. Replaced with div tags.  
+Tried to make the page responsive, ie. resize with different screen sizes.
+Added checkbox to disable TTS.
+Added capitalization to first character.
+Added question mark for sentences starting with question words otherwise added period to sentence.
+Added functionality to "cancel" voice input if the last word is cancel.
+Included missing microphone graphics in the repository.
+
+
+
