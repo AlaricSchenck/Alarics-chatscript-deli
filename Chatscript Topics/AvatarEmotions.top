@@ -1,0 +1,36 @@
+
+
+
+
+outputmacro: ^avatarimage(^image)
+	$oob_command = ^join( \[ avatar = ^image \] )
+        $oob_command
+
+outputmacro: ^showemotion(^emotion)
+	$emotion = ^pos( lowercase ^emotion )
+	if ( $emotion = happy ) {$$image = happy.png}
+	else if ( $emotion = sad ) {$$image = sad.png}
+        else if ( $emotion = cry ) {$$image = cry.png}
+	else if ( $emotion = mad) {$$image = mad.png}
+        else if ( $emotion = wink ) {$$image = wink.png}
+	else if ( $emotion = hearts ) {$$image = hearts.png}
+        else if ( $emotion = heart ) {$$image = hearts.png}
+	else if ( $emotion = surprised ) {$$image = surprised.png}
+        else if ( $emotion = surprise ) {$$image = surprised.png}
+        else if ( $emotion = neutral ) {$$image = neutral.png}
+	else { $$image = neutral.png}
+        ^avatarimage($$image)
+
+concept: ~avatarEmotions ( happy sad cry mad wink hearts surprised neutral )
+
+topic: ~avatar keep repeat  ( Avatar avatar image xxsetemotion )
+
+
+u: ( [make change show display] [Avatar avatar] {image} {to as has} _~avatarEmotions )
+	^showemotion('_0) Ok. ^keep ^repeat
+
+u: ( xxsetemotion _~avatarEmotions )
+	^showemotion('_0) Ok. ^keep ^repeat
+
+# u: (*) no match for avatar emotion or image ^keep ^repeat
+
